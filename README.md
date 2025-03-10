@@ -1,0 +1,2 @@
+# codealpha_task_irisFlower_prediction
+ I have created streamlit web app using the data set of iris flower prediction as an intern of data scientist. In this project i have designed a model which predict iris flower individual species according to user requirement and also show the pic of this individual species as well as for the user i9nteraction i am using sound of sucessfull prediction and baloons that make user engaged in my app more.

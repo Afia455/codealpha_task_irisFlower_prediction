@@ -13,10 +13,9 @@ st.title("🌺 Iris Flower Classification App")
 st.write("Upload Iris Dataset and see details...")
 
 # File uploader
-dataset = st.file_uploader("Upload CSV File", type=["csv"])
+df = pd.read_csv("C:/Users/Home/Documents/GitHub/codealpha_task_irisFlower_prediction/Iris.csv")
 
-if dataset is not None:
-    df = pd.read_csv(dataset)
+if df is not None:
     df.columns = ['ID', 'SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm', 'Species']
     # df.drop(columns=['Index', 'ID'], inplace=True) 
     
@@ -102,22 +101,22 @@ if dataset is not None:
          species = predicted_species[0]
          
          if predicted_species == "Iris-setosa":
-                st.image("F:/jupyterProject/iris_classification/setosa.jpg", caption="Iris Setosa", use_container_width=True)
+                st.image("image/setosa.jpg", caption="Iris Setosa", use_container_width=True)
                 st.write("This is Iris Setosa, a small and beautiful flower! 🌸")
-                audio_base64 = get_audio_base64("F:/jupyterProject/iris_classification/voice.mp3")  
+                audio_base64 = get_audio_base64("voice.mp3")  
                 st.balloons()
 
          elif predicted_species == "Iris-versicolor":
-                st.image("F:/jupyterProject/iris_classification/versicolor.webp", caption="Iris Versicolor", use_container_width=True)
+                st.image("image/versicolor.webp", caption="Iris Versicolor", use_container_width=True)
                 st.write("This is Iris Versicolor, known for its vibrant colors! 🌿")
                 audio_base64 = get_audio_base64("F:/jupyterProject/iris_classification/voice.mp3")                  
-                st.audio("F:/jupyterProject/iris_classification/voice.mp3")
+                st.audio("voice.mp3")
                 st.balloons()
 
          elif predicted_species == "Iris-virginica":
-                st.image("F:/jupyterProject/iris_classification/verginica.jpeg", caption="Iris Virginica", use_container_width=True)
+                st.image("image/verginica.jpeg", caption="Iris Virginica", use_container_width=True)
                 st.write("This is Iris Virginica, a tall and elegant flower! 🌺")
-                audio_base64 = get_audio_base64("F:/jupyterProject/iris_classification/voice.mp3")  
+                audio_base64 = get_audio_base64("voice.mp3")  
                 
          play_audio(audio_base64)      
          st.balloons()

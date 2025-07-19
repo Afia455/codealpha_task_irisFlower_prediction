@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import joblib
 import base64
-
+import os
 
 
 # Streamlit UI
@@ -13,7 +13,8 @@ st.title("🌺 Iris Flower Classification App")
 st.write("Upload Iris Dataset and see details...")
 
 # File uploader
-df = pd.read_csv("C:/Users/Home/Documents/GitHub/codealpha_task_irisFlower_prediction/Iris.csv")
+# df = pd.read_csv("C:/Users/Home/Documents/GitHub/codealpha_task_irisFlower_prediction/Iris.csv")
+df = pd.read_csv("Iris.csv")
 
 if df is not None:
     df.columns = ['ID', 'SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm', 'Species']
